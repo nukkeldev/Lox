@@ -49,12 +49,23 @@ public class Interpreter implements Expr.Visitor<Object> {
                     yield l + r;
                 if (left instanceof String l && right instanceof String r)
                     yield l + r;
+                if (left instanceof String l && right instanceof Double r) {
+                    String rs = r.toString();
+                    yield l + (rs.endsWith(".0") ? rs.substring(0, rs.length() - 2) : rs);
+                }
+                if (left instanceof Double l && right instanceof String r) {
+                    String ls = l.toString();
+                    yield (ls.endsWith(".0") ? ls.substring(0, ls.length() - 2) : ls) + r;
+                }
 
                 throw new RuntimeError(expr.operator,
                         "Operands must be two numbers or strings.");
             }
             case SLASH -> {
                 checkNumberOperands(expr.operator, left, right);
+                if ((double) right == 0)
+                    throw new RuntimeError(expr.operator,
+                            "Cannot divide by 0.");
                 yield (double) left / (double) right;
             }
             case STAR -> {
