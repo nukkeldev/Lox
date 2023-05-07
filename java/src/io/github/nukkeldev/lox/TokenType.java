@@ -3,7 +3,7 @@ package io.github.nukkeldev.lox;
 public enum TokenType {
     // Single-character tokens
     LEFT_PARAN, RIGHT_PARAN, LEFT_BRACE, RIGHT_BRACE,
-    COMMA, DOT, MINUS, PLUS, SEMICOLON, SLASH, STAR,
+    COMMA, DOT, MINUS, PLUS, SEMICOLON, SLASH, STAR, HAT,
 
     // One or two character tokens
     BANG, BANG_EQUAL,

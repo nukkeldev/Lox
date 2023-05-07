@@ -64,6 +64,7 @@ public class Scanner {
             case '+' -> addToken(PLUS);
             case ';' -> addToken(SEMICOLON);
             case '*' -> addToken(STAR);
+            case '^' -> addToken(HAT);
 
             // One or two character tokens
             case '!' -> addToken(match('=') ? BANG_EQUAL : BANG);

@@ -1,0 +1,7 @@
+fun distanceFromOrigin(x, y, z) {
+    var dist = (x^2 + y^2 + z^2)^0.5;
+    print "(" + x + ", " + y + ", " + z + ")" +
+          " is " + dist + " units away from (0, 0, 0)";
+}
+
+distanceFromOrigin(2, 4, 6);
