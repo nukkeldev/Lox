@@ -1,0 +1,5 @@
+fun life() {
+    return 42;
+}
+
+print life();
